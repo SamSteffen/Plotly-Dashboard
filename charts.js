@@ -1,30 +1,35 @@
-function init() {
-  // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
-
-  // Use the list of sample names to populate the select options
-  d3.json("samples.json").then((data) => {
-    console.log(data);
-    var sampleNames = data.names;
-    sampleNames.forEach((sample) => {
-      selector
-        .append("option")
-        .text(sample)
-        .property("value", sample);
-    });
-
-    // Use the first sample from the list to build the initial plots
-    var firstSample = sampleNames[0];
-    buildCharts(firstSample);
-    buildMetadata(firstSample);
-  });
+d3.json("samples.json").then(data) => {
+  console.log(data);
 }
 
-// Initialize the dashboard
-init();
+// function init() {
+//   // Grab a reference to the dropdown select element
+//   var selector = d3.select("#selDataset");
+
+//   // Use the list of sample names to populate the select options
+//   d3.json("samples.json").then((data) => {
+//     console.log(data);
+//     var sampleNames = data.names;
+//     sampleNames.forEach((sample) => {
+//       selector
+//         .append("option")
+//         .text(sample)
+//         .property("value", sample);
+//     });
+
+//     // Use the first sample from the list to build the initial plots
+//     var firstSample = sampleNames[0];
+//     buildCharts(firstSample);
+//     buildMetadata(firstSample);
+//   });
+// }
+
+// // Initialize the dashboard
+// init();
 
 function optionChanged(newSample) {
   // Fetch new data each time a new sample is selected
+  console.log(newSample);
   buildMetadata(newSample);
   buildCharts(newSample);
 }
@@ -41,12 +46,19 @@ function buildMetadata(sample) {
 
     // Use `.html("") to clear any existing metadata
     PANEL.html("");
-
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
     // tags for each key-value in the metadata.
-    Object.entries(result).forEach(([key, value]) => {
-      PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
+    PANEL.append("h6").text("ID: " + result.id);
+    PANEL.append("h6").text("ETHNICITY: " + result.ethnicity);
+    PANEL.append("h6").text("GENDER: " + result.gender);
+    PANEL.append("h6").text("AGE: " + result.age);
+    PANEL.append("h6").text("LOCATION: " + result.location);
+    PANEL.append("h6").text("BB-TYPE: " + result.bbtype);
+    PANEL.append("h6").text("WFREQ: " + result.wfreq);
+    
+    // Object.entries(result).forEach(([key, value]) => {
+    //   PANEL.append("h6").text(`${key.toUpperCase()}: ${value}`);
     });
   });
 }
