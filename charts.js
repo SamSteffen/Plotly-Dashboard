@@ -65,9 +65,9 @@ function buildCharts(sample) {
     var firstSample = data.samples[0];
         
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
-    var otuIds = data.samples[0].otu_ids
-    var otuLabels = data.samples[0].otu_labels
-    var sampleValues = data.samples[0].sample_values
+    var otuIds = data.samples[0].otu_ids;
+    var otuLabels = data.samples[0].otu_labels;
+    var sampleValues = data.samples[0].sample_values;
 
     // 7. Create the yticks for the bar chart.
     // Hint: Get the the top 10 otu_ids and map them in descending order  
@@ -86,7 +86,6 @@ function buildCharts(sample) {
         values: [sampleValues],
         type: 'bar',
         orientation: 'h'
-        hovermode: 'closest'
     };
   ];
 
@@ -98,6 +97,6 @@ function buildCharts(sample) {
     };
     
     // 10. Use Plotly to plot the data with the layout. 
-    Plotly.newPlot("plotArea", barData, barLayout);
+    Plotly.newPlot("bar", barData, barLayout);
   });
 };
