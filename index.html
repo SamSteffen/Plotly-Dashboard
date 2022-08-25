@@ -7,6 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    .jumbotron {
+    background-image: ("c:\Users\ssteffen\Desktop\Sam\Vanderbilt Boot Camp\MyRepo\Module 12_Plotly\bb_bacteria\Plotly-sample\bellybutton_image.png");
+    background-size: cover;
+    }
+</style>
 </head>
 
 <body>
@@ -36,16 +42,25 @@
 
       <div class="col-md-5">
         <div id="bar"></div>
+        <p> This bar chart shows the top ten bacteria cultures found in the navel cavity of the selected
+          test subject. OTU stands for "Operational Taxonomic Unit" based on sequence similarity of the 16S
+          marker gene. It is used to classify bacteria at the genus taxonomy level.</p>
       </div>
       
       <div class="col-md-5">
         <div id="gauge"></div>
       </div>
+      <p> This gauge shows the number of times the test subject washes their navel in a given week.</p>
     </div>
     
     <div class="row">
       <div class="col-md-12">
         <div id="bubble"></div>
+        <p>This bubble chart illustrates the quantity of bacteria types found in each sample of the indicated 
+          subject. Each plot on this graph represents a navel sample; the size of the plot point indicates a 
+          proportional quantity of bacteria types found. The color scheme is meant to illustrate the spectrum of 
+          bacteria types discovered at different Operational Taxonomic Units (OTUs).
+        </p>
       </div>
     
     </div>
