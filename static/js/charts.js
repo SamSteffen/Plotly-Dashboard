@@ -96,23 +96,29 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [
       {
-      x : otuIds,
-      y : sampleValues,
-      hovertext: otuLabels,
-      type: 'bubble',
+      x : otuIds.slice(0, 10).reverse(),
+      y : sampleValues.slic(0, 10).reverse(),
+      text: hoverText,
       mode: 'markers',
       marker: {
         size: size,
         color: rgb(18, 80, 160, 190, 210),
         colorscale: 'sequential' 
-            }
-      }
+      }}
     ];
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-      title: "Bacteria Cultures Per Sample"
-      xlabel: "OTU ID"
+      title: "Bacteria Cultures Per Sample",
+      xlabel: "OTU ID",
+      margin:{
+        l: 50,
+        r: 50,
+        b: 100,
+        t: 100,
+        pad: 4
+      },
+      showlegend: false,
       hovermode: 'closest'
     };
 
