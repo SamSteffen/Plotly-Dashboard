@@ -142,7 +142,7 @@ function buildCharts(sample) {
       value: washFreq,
       title: {text: "<b>Belly Button Washing Frequency<b></b>Scrubs per Week"},
       type: "indicator",
-      mode: "guage+number",       
+      mode: "gauge+number",       
     }];
       
     // 5. Create the layout for the gauge chart.
