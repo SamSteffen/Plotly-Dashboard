@@ -95,13 +95,13 @@ function buildCharts(sample) {
     // 1. Create the trace for the bubble chart.
     var bubbleData = [
       {
-      x : otuIds.slice(0, 10).reverse(),
-      y : sampleValues.slic(0, 10).reverse(),
-      text: hoverText,
+      x: otuIds.slice(0, 10).reverse(),
+      y: sampleValues.slice(0, 10).reverse(),
+      text: sampleValues.slice(0, 10).reverse(),
       mode: 'markers',
       marker: {
-        size: size,
-        color: rgb(18, 80, 160, 190, 210),
+        size: sampleValues.slice(0, 10).reverse(),
+        color: otuIds.slice(0, 10).reverse(),
         colorscale: 'sequential' 
       }}
     ];
@@ -125,3 +125,4 @@ function buildCharts(sample) {
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
   });
 }
+
